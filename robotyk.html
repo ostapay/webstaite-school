@@ -1,121 +1,16 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Technik Robotyk - Szczegóły Kierunku</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --neon-purple: #bc13fe; 
-            --dark-bg: #050505;
-            --panel-bg: #111;
-            --text-main: #fff;
-        }
-
-        * { box-sizing: border-box; }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            background: var(--dark-bg);
-            color: var(--text-main);
-            overflow-x: hidden;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 50px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-            background: rgba(5, 5, 5, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #222;
-            height: 110px;
-        }
-
-        .logo a { display: flex; align-items: center; height: 100%; }
-        .logo img { height: 90px; width: auto; transition: 0.3s; }
-        .logo img:hover { transform: scale(1.05); filter: drop-shadow(0 0 10px rgba(188, 19, 254, 0.6)); }
-
-        .nav-links a {
-            color: #ccc;
-            text-decoration: none;
-            margin-left: 30px;
-            font-weight: 700;
-            transition: 0.3s;
-            text-transform: uppercase;
-            font-size: 14px;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--neon-purple);
-            text-shadow: 0 0 10px var(--neon-purple);
-        }
-
-        .cta-btn {
-            background: transparent;
-            border: 2px solid var(--neon-purple);
-            color: var(--neon-purple);
-            padding: 10px 25px;
-            border-radius: 50px;
-            font-weight: bold;
-            margin-left: 30px;
-            transition: 0.3s;
-            cursor: pointer;
-            text-decoration: none;
-        }
-        .cta-btn:hover { background: var(--neon-purple); color: #000; box-shadow: 0 0 20px var(--neon-purple); }
-
-        .profile-hero {
-            height: 90vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.7), #050505), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover;
-            background-attachment: fixed;
-            padding: 0 20px;
-            margin-top: 110px;
-        }
-
-        .profile-hero h1 { font-size: 60px; text-transform: uppercase; margin: 0 0 20px; }
-        .profile-hero h1 span { color: var(--neon-purple); text-shadow: 0 0 30px rgba(188, 19, 254, 0.6); }
-        .profile-desc { max-width: 900px; font-size: 18px; line-height: 1.6; color: #ddd; }
-
-        .container { max-width: 1300px; margin: 0 auto; padding: 50px 20px; }
-
-        .section-row { display: flex; align-items: center; justify-content: space-between; margin: 120px 0; }
-        .section-row:nth-child(even) { flex-direction: row-reverse; }
-        .text-col { width: 48%; }
-        .text-col h2 { font-size: 36px; color: var(--neon-purple); margin-bottom: 20px; text-transform: uppercase; }
-        .text-col h3 { font-size: 24px; color: #fff; margin-top: 30px; border-left: 4px solid var(--neon-purple); padding-left: 15px; }
-        .text-col p { font-size: 16px; line-height: 1.8; color: #ccc; }
-        .img-col { width: 48%; height: 400px; background-size: cover; border-radius: 5px; border: 1px solid #333; }
-
-        .machines-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin: 50px 0; }
-        .machine-card { background: #111; padding: 30px; border-radius: 5px; border: 1px solid #333; text-align: center; }
-        .machine-card i { font-size: 40px; color: var(--neon-purple); margin-bottom: 20px; }
-        .machine-card h4 { color: #fff; font-size: 18px; margin-bottom: 10px; text-transform: uppercase; }
-        .machine-card p { color: #888; font-size: 14px; }
-
-        .faq-item { background: #111; margin-bottom: 20px; padding: 25px; border-radius: 5px; border-left: 3px solid var(--neon-purple); }
-        .faq-item h4 { margin: 0 0 10px; color: #fff; font-size: 18px; }
-        .faq-item p { margin: 0; color: #aaa; font-size: 14px; }
-
-        footer { text-align: center; padding: 40px; background: #000; color: #555; border-top: 1px solid #111; font-size: 14px; }
-        @media (max-width: 900px) { .section-row { flex-direction: column !important; } .text-col, .img-col { width: 100%; } .img-col { margin-top: 30px; height: 300px; } }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+
+<body class="page-robotyk">
 
     <nav>
         <div class="logo"><a href="tytul.html"><img src="bittsbetter.png" alt="Logo"></a></div>
@@ -130,7 +25,8 @@
     <header class="profile-hero">
         <h1>Technik <span>Robotyk</span></h1>
         <p class="profile-desc">
-            Interdyscyplinarny kierunek łączący mechanikę, elektronikę i programowanie. Kształcenie w oparciu o projekty inżynieryjne realizowane w standardach przemysłowych.
+            Interdyscyplinarny kierunek łączący mechanikę, elektronikę i programowanie. Kształcenie w oparciu o projekty
+            inżynieryjne realizowane w standardach przemysłowych.
         </p>
     </header>
 
@@ -139,23 +35,30 @@
         <div class="section-row">
             <div class="text-col">
                 <h2>Profil Kształcenia</h2>
-                <p>Kierunek Technik Robotyk odpowiada na rosnące zapotrzebowanie Przemysłu 4.0 na specjalistów z zakresu automatyzacji.</p>
+                <p>Kierunek Technik Robotyk odpowiada na rosnące zapotrzebowanie Przemysłu 4.0 na specjalistów z zakresu
+                    automatyzacji.</p>
                 <h3>Kwalifikacje Państwowe</h3>
-                <p>Program kończy się uzyskaniem tytułu zawodowego Technika Robotyka. Uczniowie przystępują do egzaminów:</p>
+                <p>Program kończy się uzyskaniem tytułu zawodowego Technika Robotyka. Uczniowie przystępują do
+                    egzaminów:</p>
                 <ul style="list-style: none; padding: 0; color: #ccc;">
-                    <li style="margin-bottom: 10px;"><strong>ELM.03:</strong> Montaż, uruchamianie i konserwacja systemów robotyki.</li>
+                    <li style="margin-bottom: 10px;"><strong>ELM.03:</strong> Montaż, uruchamianie i konserwacja
+                        systemów robotyki.</li>
                     <li><strong>ELM.06:</strong> Eksploatacja i programowanie systemów robotyki.</li>
                 </ul>
             </div>
-            <div class="img-col" style="background-image: url('https://images.unsplash.com/photo-1565514020176-884c478d530b?q=80&w=2070&auto=format&fit=crop');"></div>
+            <div class="img-col"
+                style="background-image: url('https://images.unsplash.com/photo-1565514020176-884c478d530b?q=80&w=2070&auto=format&fit=crop');">
+            </div>
         </div>
 
-        <h2 style="text-align: center; color: #fff; margin-bottom: 40px; text-transform: uppercase; font-size: 30px;">Zaplecze Techniczne</h2>
+        <h2 style="text-align: center; color: #fff; margin-bottom: 40px; text-transform: uppercase; font-size: 30px;">
+            Zaplecze Techniczne</h2>
         <div class="machines-grid">
             <div class="machine-card">
                 <i class="fa-solid fa-cube"></i>
                 <h4>Druk 3D</h4>
-                <p>Laboratorium wyposażone w drukarki FDM i SLA (Prusa, Bambu Lab) do szybkiego prototypowania części.</p>
+                <p>Laboratorium wyposażone w drukarki FDM i SLA (Prusa, Bambu Lab) do szybkiego prototypowania części.
+                </p>
             </div>
             <div class="machine-card">
                 <i class="fa-solid fa-gears"></i>
@@ -177,7 +80,8 @@
         <div class="section-row">
             <div class="text-col">
                 <h2>Zespół Inżynieryjny Kraken</h2>
-                <p>Integralną częścią kształcenia jest udział w projektach zespołu <strong>New Tech KRAKEN 9155</strong>. Uczniowie zdobywają doświadczenie w:</p>
+                <p>Integralną częścią kształcenia jest udział w projektach zespołu <strong>New Tech KRAKEN
+                        9155</strong>. Uczniowie zdobywają doświadczenie w:</p>
                 <ul>
                     <li>Budowie robotów mobilnych klasy przemysłowej (50+ kg).</li>
                     <li>Programowaniu systemów autonomicznych i wizyjnych.</li>
@@ -185,17 +89,22 @@
                 </ul>
                 <p>Zespół reprezentuje szkołę na zawodach FIRST Robotics Competition w USA i Turcji.</p>
             </div>
-            <div class="img-col" style="background-image: url('https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?q=80&w=2069&auto=format&fit=crop');"></div>
+            <div class="img-col"
+                style="background-image: url('https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?q=80&w=2069&auto=format&fit=crop');">
+            </div>
         </div>
 
-        <h2 style="color: #fff; margin-bottom: 30px; text-transform: uppercase; font-size: 24px;">Informacje Organizacyjne</h2>
+        <h2 style="color: #fff; margin-bottom: 30px; text-transform: uppercase; font-size: 24px;">Informacje
+            Organizacyjne</h2>
         <div class="faq-item">
             <h4>Wyjazdy Zagraniczne</h4>
-            <p>Udział w zagranicznych turniejach robotycznych jest dobrowolny i stanowi formę wyróżnienia dla uczniów najbardziej zaangażowanych w prace zespołu KRAKEN.</p>
+            <p>Udział w zagranicznych turniejach robotycznych jest dobrowolny i stanowi formę wyróżnienia dla uczniów
+                najbardziej zaangażowanych w prace zespołu KRAKEN.</p>
         </div>
         <div class="faq-item">
             <h4>Bezpieczeństwo</h4>
-            <p>Praca w warsztacie odbywa się zgodnie z rygorystycznymi normami BHP. Uczniowie przechodzą obowiązkowe szkolenia stanowiskowe przed dopuszczeniem do obsługi maszyn.</p>
+            <p>Praca w warsztacie odbywa się zgodnie z rygorystycznymi normami BHP. Uczniowie przechodzą obowiązkowe
+                szkolenia stanowiskowe przed dopuszczeniem do obsługi maszyn.</p>
         </div>
 
     </div>
@@ -205,4 +114,5 @@
     </footer>
 
 </body>
+
 </html>

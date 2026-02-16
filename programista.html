@@ -1,153 +1,16 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Technik Programista - Szczegóły</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --neon-blue: #00f3ff;
-            --dark-bg: #050505;
-            --glass-bg: rgba(30, 30, 30, 0.4);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --text-main: #fff;
-        }
-
-        * { box-sizing: border-box; }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            background: var(--dark-bg);
-            background-image: radial-gradient(circle at 10% 20%, rgba(0, 243, 255, 0.05) 0%, transparent 40%),
-                              radial-gradient(circle at 90% 80%, rgba(0, 243, 255, 0.05) 0%, transparent 40%);
-            color: var(--text-main);
-            overflow-x: hidden;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 50px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-            background: rgba(5, 5, 5, 0.7);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid var(--glass-border);
-            height: 110px;
-        }
-
-        .logo a { display: flex; align-items: center; height: 100%; }
-        .logo img { height: 90px; width: auto; transition: 0.3s; }
-        .logo img:hover { transform: scale(1.05); filter: drop-shadow(0 0 10px rgba(0, 243, 255, 0.6)); }
-
-        .nav-links a {
-            color: #ccc;
-            text-decoration: none;
-            margin-left: 30px;
-            font-weight: 700;
-            transition: 0.3s;
-            text-transform: uppercase;
-            font-size: 14px;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--neon-blue);
-            text-shadow: 0 0 15px var(--neon-blue);
-        }
-
-        .cta-btn {
-            background: rgba(0, 243, 255, 0.1);
-            border: 1px solid var(--neon-blue);
-            color: var(--neon-blue);
-            padding: 10px 25px;
-            border-radius: 50px;
-            font-weight: bold;
-            margin-left: 30px;
-            transition: 0.3s;
-            cursor: pointer;
-            text-decoration: none;
-            backdrop-filter: blur(5px);
-        }
-        .cta-btn:hover { background: var(--neon-blue); color: #000; box-shadow: 0 0 30px var(--neon-blue); }
-
-        .profile-hero {
-            height: 90vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.7), #050505), url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover;
-            background-attachment: fixed;
-            padding: 0 20px;
-            margin-top: 110px;
-        }
-
-        .profile-hero h1 { font-size: 60px; text-transform: uppercase; margin: 0 0 20px; animation: fadeInDown 1s forwards; }
-        .profile-hero h1 span { color: var(--neon-blue); text-shadow: 0 0 30px rgba(0, 243, 255, 0.6); }
-        .profile-desc { max-width: 900px; font-size: 18px; line-height: 1.6; color: #ddd; animation: fadeInUp 1s forwards 0.5s; opacity: 0; background: rgba(0,0,0,0.4); padding: 20px; border-radius: 15px; backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.05); }
-
-        .container { max-width: 1300px; margin: 0 auto; padding: 50px 20px; }
-
-        .section-header { text-align: center; margin: 100px 0 60px; }
-        .section-header h2 { font-size: 36px; color: var(--neon-blue); margin-bottom: 20px; text-transform: uppercase; text-shadow: 0 0 20px rgba(0,243,255,0.3); }
-        .section-header p { color: #aaa; font-size: 16px; max-width: 700px; margin: 0 auto; }
-
-        .standards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 100px;
-        }
-
-        .standard-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            padding: 30px;
-            border: 1px solid var(--glass-border);
-            border-radius: 15px;
-            transition: 0.3s;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        }
-        .standard-card:hover { border-color: var(--neon-blue); background: rgba(0, 243, 255, 0.05); transform: translateY(-5px); box-shadow: 0 0 30px rgba(0, 243, 255, 0.15); }
-        .standard-card h4 { color: #fff; font-size: 20px; margin-bottom: 15px; }
-        .standard-card ul { list-style: none; padding: 0; color: #ccc; font-size: 14px; line-height: 1.8; }
-        .standard-card li { border-bottom: 1px solid rgba(255,255,255,0.1); padding: 8px 0; }
-        .standard-card li:last-child { border-bottom: none; }
-
-        .section-row { display: flex; align-items: center; justify-content: space-between; margin: 120px 0; opacity: 0; transform: translateY(50px); transition: all 0.8s ease-out; }
-        .section-row.active { opacity: 1; transform: translateY(0); }
-        .section-row:nth-child(even) { flex-direction: row-reverse; }
-        .text-col { width: 48%; }
-        .text-col h3 { color: #fff; font-size: 28px; margin-bottom: 20px; border-left: 4px solid var(--neon-blue); padding-left: 15px; }
-        .text-col p { font-size: 16px; line-height: 1.8; color: #ccc; margin-bottom: 20px; }
-        .img-col { width: 48%; height: 400px; background-size: cover; background-position: center; border-radius: 20px; box-shadow: 0 0 30px rgba(0, 243, 255, 0.1); border: 1px solid rgba(255,255,255,0.1); position: relative; }
-        .img-col::before { content: ''; position: absolute; top: 20px; left: 20px; right: -20px; bottom: -20px; border: 2px solid var(--neon-blue); z-index: -1; border-radius: 20px; opacity: 0.6; }
-
-        .faq-item { background: var(--glass-bg); backdrop-filter: blur(10px); margin-bottom: 20px; padding: 25px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.05); border-left: 3px solid var(--neon-blue); transition: 0.3s; }
-        .faq-item:hover { background: rgba(40, 40, 40, 0.6); box-shadow: 0 0 20px rgba(0, 243, 255, 0.1); }
-        .faq-item h4 { margin: 0 0 10px; color: #fff; font-size: 18px; }
-        .faq-item p { margin: 0; color: #aaa; font-size: 14px; }
-
-        .back-btn { display: inline-block; margin: 60px 0; color: #fff; text-decoration: none; border: 1px solid var(--neon-blue); padding: 15px 40px; border-radius: 5px; font-weight: bold; transition: 0.3s; background: rgba(0, 243, 255, 0.05); backdrop-filter: blur(5px); }
-        .back-btn:hover { background: var(--neon-blue); color: #000; box-shadow: 0 0 30px var(--neon-blue); }
-
-        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-50px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
-
-        footer { text-align: center; padding: 40px; background: rgba(5, 5, 5, 0.9); backdrop-filter: blur(10px); color: #555; border-top: 1px solid rgba(255, 255, 255, 0.05); font-size: 14px; }
-        @media (max-width: 900px) { .section-row { flex-direction: column !important; } .text-col, .img-col { width: 100%; } .img-col { margin-top: 30px; height: 300px; } }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+
+<body class="page-programista">
 
     <nav>
         <div class="logo"><a href="tytul.html"><img src="bittsbetter.png" alt="Logo"></a></div>
@@ -162,7 +25,8 @@
     <header class="profile-hero">
         <h1>Technik <span>Programista</span></h1>
         <p class="profile-desc">
-            Profil kształcenia ukierunkowany na inżynierię oprogramowania. Program realizowany zgodnie z podstawą programową MEN, rozszerzony o standardy rynkowe.
+            Profil kształcenia ukierunkowany na inżynierię oprogramowania. Program realizowany zgodnie z podstawą
+            programową MEN, rozszerzony o standardy rynkowe.
         </p>
     </header>
 
@@ -206,13 +70,18 @@
         <div class="section-row reveal">
             <div class="text-col">
                 <h3>Kwalifikacje Państwowe</h3>
-                <p>Absolwent kończy edukację z tytułem zawodowym Technika Programisty po zdaniu dwóch egzaminów państwowych:</p>
+                <p>Absolwent kończy edukację z tytułem zawodowym Technika Programisty po zdaniu dwóch egzaminów
+                    państwowych:</p>
                 <ul style="list-style: none; padding: 0; color: #ccc;">
-                    <li style="margin-bottom: 15px;"><strong>INF.03:</strong> Tworzenie i administrowanie stronami i aplikacjami internetowymi oraz bazami danych.</li>
-                    <li><strong>INF.04:</strong> Projektowanie, programowanie i testowanie aplikacji (desktopowych i mobilnych).</li>
+                    <li style="margin-bottom: 15px;"><strong>INF.03:</strong> Tworzenie i administrowanie stronami i
+                        aplikacjami internetowymi oraz bazami danych.</li>
+                    <li><strong>INF.04:</strong> Projektowanie, programowanie i testowanie aplikacji (desktopowych i
+                        mobilnych).</li>
                 </ul>
             </div>
-            <div class="img-col" style="background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop');"></div>
+            <div class="img-col"
+                style="background-image: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop');">
+            </div>
         </div>
 
         <div class="section-header">
@@ -222,30 +91,36 @@
         <div class="standards-grid">
             <div class="standard-card">
                 <h4>Bloki Projektowe</h4>
-                <p style="color: #aaa; font-size: 14px;">Zajęcia zawodowe odbywają się w blokach 3-4 godzinnych, co pozwala na realizację złożonych zadań programistycznych bez przerywania pracy.</p>
+                <p style="color: #aaa; font-size: 14px;">Zajęcia zawodowe odbywają się w blokach 3-4 godzinnych, co
+                    pozwala na realizację złożonych zadań programistycznych bez przerywania pracy.</p>
             </div>
             <div class="standard-card">
                 <h4>Infrastruktura</h4>
-                <p style="color: #aaa; font-size: 14px;">Każde stanowisko wyposażone jest w stację roboczą klasy enterprise, dwa monitory oraz dostęp do profesjonalnego oprogramowania (JetBrains, Visual Studio).</p>
+                <p style="color: #aaa; font-size: 14px;">Każde stanowisko wyposażone jest w stację roboczą klasy
+                    enterprise, dwa monitory oraz dostęp do profesjonalnego oprogramowania (JetBrains, Visual Studio).
+                </p>
             </div>
             <div class="standard-card">
                 <h4>Kadra Dydaktyczna</h4>
-                <p style="color: #aaa; font-size: 14px;">Zajęcia prowadzone są przez praktyków z branży IT oraz wykładowców akademickich Politechniki Krakowskiej.</p>
+                <p style="color: #aaa; font-size: 14px;">Zajęcia prowadzone są przez praktyków z branży IT oraz
+                    wykładowców akademickich Politechniki Krakowskiej.</p>
             </div>
         </div>
 
         <div class="section-header">
             <h2>Informacje dla Kandydatów</h2>
         </div>
-        
+
         <div class="faq-item">
             <h4>Matura i Studia</h4>
-            <p>Program obejmuje przedmioty ogólnokształcące przygotowujące do matury (poziom podstawowy i rozszerzony). Absolwenci najczęściej wybierają kierunki: Informatyka, Data Science, Cyberbezpieczeństwo.</p>
+            <p>Program obejmuje przedmioty ogólnokształcące przygotowujące do matury (poziom podstawowy i rozszerzony).
+                Absolwenci najczęściej wybierają kierunki: Informatyka, Data Science, Cyberbezpieczeństwo.</p>
         </div>
-        
+
         <div class="faq-item">
             <h4>Wymagania Sprzętowe</h4>
-            <p>Szkoła zapewnia pełne zaplecze sprzętowe niezbędne do realizacji podstawy programowej. Posiadanie własnego komputera jest zalecane do pracy własnej w domu.</p>
+            <p>Szkoła zapewnia pełne zaplecze sprzętowe niezbędne do realizacji podstawy programowej. Posiadanie
+                własnego komputera jest zalecane do pracy własnej w domu.</p>
         </div>
 
         <div style="text-align: center;">
@@ -275,4 +150,5 @@
     </script>
 
 </body>
+
 </html>

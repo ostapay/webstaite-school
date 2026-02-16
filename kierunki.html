@@ -1,212 +1,16 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kierunki - New Tech Kraków</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="favicon.png">
-    
-    <style>
-        :root {
-            --neon-blue: #00f3ff;
-            --neon-purple: #bc13fe;
-            --dark-bg: #050505;
-            --glass-bg: rgba(30, 30, 30, 0.4);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --text-main: #fff;
-        }
-
-        * { box-sizing: border-box; }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            background: var(--dark-bg);
-            background-image: radial-gradient(circle at 50% 50%, rgba(0, 243, 255, 0.03) 0%, transparent 60%);
-            color: var(--text-main);
-            overflow-x: hidden;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 50px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-            background: rgba(5, 5, 5, 0.7);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid var(--glass-border);
-            height: 110px;
-        }
-
-        .logo a { display: flex; align-items: center; height: 100%; }
-        .logo img { height: 90px; width: auto; transition: 0.3s; }
-        .logo img:hover { transform: scale(1.05); filter: drop-shadow(0 0 15px rgba(0, 243, 255, 0.6)); }
-
-        .nav-links a {
-            color: #ccc;
-            text-decoration: none;
-            margin-left: 30px;
-            font-weight: 700;
-            transition: 0.3s;
-            text-transform: uppercase;
-            font-size: 14px;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--neon-blue);
-            text-shadow: 0 0 15px var(--neon-blue);
-        }
-
-        .cta-btn {
-            background: rgba(0, 243, 255, 0.1);
-            border: 1px solid var(--neon-blue);
-            color: var(--neon-blue);
-            padding: 10px 25px;
-            border-radius: 50px;
-            font-weight: bold;
-            margin-left: 30px;
-            transition: 0.3s;
-            cursor: pointer;
-            text-decoration: none;
-            backdrop-filter: blur(5px);
-        }
-        .cta-btn:hover { background: var(--neon-blue); color: #000; box-shadow: 0 0 30px var(--neon-blue); }
-
-        .page-header {
-            padding: 180px 50px 80px;
-            text-align: center;
-            background: radial-gradient(circle at center, rgba(26, 26, 26, 0.5) 0%, rgba(5, 5, 5, 0.8) 70%);
-        }
-
-        .page-header h1 {
-            font-size: 60px;
-            text-transform: uppercase;
-            margin: 0;
-        }
-
-        .page-header h1 span {
-            color: var(--neon-blue);
-            text-shadow: 0 0 30px rgba(0, 243, 255, 0.4);
-        }
-
-        .page-header p {
-            font-size: 18px;
-            color: #888;
-            max-width: 600px;
-            margin: 20px auto 0;
-        }
-
-        .courses-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 50px;
-            padding: 0 50px 100px;
-        }
-
-        .course-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            width: 500px;
-            overflow: hidden;
-            transition: 0.4s;
-            position: relative;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .course-card:hover { transform: translateY(-15px); }
-
-        /* Specyficzne kolory hovera */
-        .course-card.programista:hover {
-            box-shadow: 0 0 40px rgba(0, 243, 255, 0.15);
-            border-color: var(--neon-blue);
-            background: rgba(0, 243, 255, 0.05);
-        }
-        
-        .course-card.robotyk:hover {
-            box-shadow: 0 0 40px rgba(188, 19, 254, 0.15);
-            border-color: var(--neon-purple);
-            background: rgba(188, 19, 254, 0.05);
-        }
-
-        .card-img {
-            height: 250px;
-            width: 100%;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-        
-        .card-img::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to bottom, transparent, rgba(30, 30, 30, 0.9));
-        }
-
-        .card-content { padding: 30px; }
-
-        .course-title {
-            font-size: 32px;
-            font-weight: 900;
-            margin: 0 0 15px;
-            text-transform: uppercase;
-        }
-
-        .programista .course-title { color: var(--neon-blue); }
-        .robotyk .course-title { color: var(--neon-purple); }
-
-        .skills-list { list-style: none; padding: 0; margin: 20px 0; }
-
-        .skills-list li {
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            color: #ddd;
-            font-size: 15px;
-            line-height: 1.4;
-        }
-
-        .skills-list li::before {
-            content: '>';
-            font-weight: bold;
-            margin-right: 10px;
-        }
-        .programista .skills-list li::before { color: var(--neon-blue); }
-        .robotyk .skills-list li::before { color: var(--neon-purple); }
-
-        .btn-course {
-            display: inline-block;
-            width: 100%;
-            padding: 15px;
-            text-align: center;
-            background: rgba(255, 255, 255, 0.05);
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 8px;
-            margin-top: 20px;
-            transition: 0.3s;
-            border: 1px solid rgba(255,255,255,0.1);
-            text-transform: uppercase;
-            font-size: 14px;
-        }
-
-        .programista .btn-course:hover { background: var(--neon-blue); color: #000; border-color: var(--neon-blue); box-shadow: 0 0 20px var(--neon-blue); }
-        .robotyk .btn-course:hover { background: var(--neon-purple); color: #000; border-color: var(--neon-purple); box-shadow: 0 0 20px var(--neon-purple); }
-
-        footer { text-align: center; padding: 40px; background: rgba(5, 5, 5, 0.9); backdrop-filter: blur(10px); color: #555; border-top: 1px solid rgba(255, 255, 255, 0.05); font-size: 14px; }
-        @media (max-width: 768px) { nav { padding: 10px 20px; height: 90px; } .logo img { height: 60px; } .nav-links { display: none; } .page-header h1 { font-size: 40px; } .course-card { width: 100%; } }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+
+<body class="page-kierunki">
 
     <nav>
         <div class="logo">
@@ -214,7 +18,7 @@
                 <img src="bittsbetter.png" alt="BittsBetter Logo">
             </a>
         </div>
-        
+
         <div class="nav-links">
             <a href="tytul.html">Start</a>
             <a href="o-nas.html">O Szkole</a>
@@ -225,18 +29,22 @@
 
     <header class="page-header">
         <h1>Wybierz swoją <br><span>Ścieżkę</span></h1>
-        <p>Dwa profile. Ten sam cel: innowacja. Zobacz, czym różni się kodowanie AI od budowania łazików marsjańskich.</p>
+        <p>Dwa profile. Ten sam cel: innowacja. Zobacz, czym różni się kodowanie AI od budowania łazików marsjańskich.
+        </p>
     </header>
 
     <div class="courses-container">
 
         <div class="course-card programista">
-            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop');"></div>
-            
+            <div class="card-img"
+                style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop');">
+            </div>
+
             <div class="card-content">
                 <div class="course-title">Technik Programista</div>
-                <p style="color: #aaa; font-size: 14px; line-height: 1.6;">Architekt cyfrowego świata. Tworzysz systemy, które działają. Od aplikacji mobilnych po sztuczną inteligencję.</p>
-                
+                <p style="color: #aaa; font-size: 14px; line-height: 1.6;">Architekt cyfrowego świata. Tworzysz systemy,
+                    które działają. Od aplikacji mobilnych po sztuczną inteligencję.</p>
+
                 <ul class="skills-list">
                     <li><strong>AI & Data:</strong> Python, Machine Learning, analiza danych.</li>
                     <li><strong>GameDev:</strong> Unity, Unreal Engine, C# i C++.</li>
@@ -249,12 +57,15 @@
         </div>
 
         <div class="course-card robotyk">
-            <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop');"></div>
-            
+            <div class="card-img"
+                style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop');">
+            </div>
+
             <div class="card-content">
                 <div class="course-title">Technik Robotyk</div>
-                <p style="color: #aaa; font-size: 14px; line-height: 1.6;">Konstruktor maszyn. Łączysz mechanikę, elektronikę i kod, by ożywić metal. Dom drużyny KRAKEN.</p>
-                
+                <p style="color: #aaa; font-size: 14px; line-height: 1.6;">Konstruktor maszyn. Łączysz mechanikę,
+                    elektronikę i kod, by ożywić metal. Dom drużyny KRAKEN.</p>
+
                 <ul class="skills-list">
                     <li><strong>Team Kraken 9155:</strong> Zawody FRC w USA i Turcji.</li>
                     <li><strong>Space Tech:</strong> Budowa łazików marsjańskich (ERC).</li>
@@ -273,4 +84,5 @@
     </footer>
 
 </body>
+
 </html>

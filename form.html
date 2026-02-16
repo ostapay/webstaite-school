@@ -1,265 +1,16 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rekrutacja - New Technology High School</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --neon-blue: #00f3ff;
-            --neon-pink: #bc13fe;
-            --dark-bg: #050505;
-            --glass-bg: rgba(30, 30, 30, 0.4);
-            --glass-border: rgba(255, 255, 255, 0.1);
-            --text-main: #fff;
-            --input-bg: rgba(0, 0, 0, 0.5);
-        }
-
-        * { box-sizing: border-box; }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            background: var(--dark-bg);
-            background-image: 
-                radial-gradient(circle at 10% 10%, rgba(188, 19, 254, 0.08) 0%, transparent 40%),
-                radial-gradient(circle at 90% 90%, rgba(0, 243, 255, 0.08) 0%, transparent 40%);
-            color: var(--text-main);
-            overflow-x: hidden;
-        }
-
-        /* --- NAV (Spójne z resztą strony) --- */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 50px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-            background: rgba(5, 5, 5, 0.8);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid var(--glass-border);
-            height: 110px;
-        }
-
-        .logo a { display: flex; align-items: center; height: 100%; }
-        .logo img { height: 90px; width: auto; transition: 0.3s; }
-        .logo img:hover { transform: scale(1.05); filter: drop-shadow(0 0 10px rgba(0, 243, 255, 0.6)); }
-
-        .nav-links a {
-            color: #ccc;
-            text-decoration: none;
-            margin-left: 30px;
-            font-weight: 700;
-            transition: 0.3s;
-            text-transform: uppercase;
-            font-size: 14px;
-        }
-
-        .nav-links a:hover { color: var(--neon-blue); text-shadow: 0 0 10px var(--neon-blue); }
-        
-        .cta-btn {
-            background: var(--neon-blue);
-            color: #000 !important;
-            padding: 10px 25px;
-            border-radius: 50px;
-            font-weight: bold;
-            margin-left: 30px;
-            box-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
-        }
-
-        /* --- HEADER --- */
-        .page-header {
-            padding: 160px 20px 60px;
-            text-align: center;
-        }
-        .page-header h1 {
-            font-size: 48px;
-            text-transform: uppercase;
-            margin: 0;
-            letter-spacing: 2px;
-        }
-        .page-header h1 span {
-            color: var(--neon-pink);
-            text-shadow: 0 0 20px rgba(188, 19, 254, 0.4);
-        }
-        .page-header p { color: #888; font-size: 18px; margin-top: 15px; }
-
-        /* --- CONTAINER & LAYOUT --- */
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px 100px; }
-
-        /* --- FORM STYLING --- */
-        .form-section {
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
-            border-radius: 15px;
-            padding: 40px;
-            margin-bottom: 40px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-        }
-
-        .form-section h2 {
-            color: var(--neon-blue);
-            font-size: 24px;
-            text-transform: uppercase;
-            margin-top: 0;
-            margin-bottom: 30px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 15px;
-        }
-
-        .form-section h3 {
-            color: #ddd;
-            font-size: 18px;
-            margin: 20px 0 15px;
-            text-transform: uppercase;
-        }
-
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        .full-width { grid-column: 1 / -1; }
-
-        .form-group { margin-bottom: 5px; }
-        
-        label {
-            display: block;
-            color: #aaa;
-            font-size: 12px;
-            font-weight: bold;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        label span.required { color: var(--neon-pink); }
-
-        input[type="text"],
-        input[type="email"],
-        input[type="date"],
-        select {
-            width: 100%;
-            background: var(--input-bg);
-            border: 1px solid #333;
-            color: #fff;
-            padding: 15px;
-            border-radius: 5px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
-            transition: 0.3s;
-            outline: none;
-        }
-
-        input:focus, select:focus {
-            border-color: var(--neon-blue);
-            box-shadow: 0 0 15px rgba(0, 243, 255, 0.1);
-        }
-        
-        /* Stylizacja kalendarza dla dark mode */
-        ::-webkit-calendar-picker-indicator {
-            filter: invert(1);
-            opacity: 0.6;
-            cursor: pointer;
-        }
-
-        /* --- INFO CARDS (Tuition & Docs) --- */
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .info-card {
-            background: rgba(20, 20, 20, 0.8);
-            border: 1px solid #333;
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .info-card.accent-pink { border-top: 3px solid var(--neon-pink); }
-        .info-card.accent-blue { border-top: 3px solid var(--neon-blue); }
-
-        .info-card h4 { font-size: 20px; margin: 0 0 20px; text-transform: uppercase; color: #fff; }
-        .price { font-size: 36px; font-weight: 900; color: var(--neon-pink); margin-bottom: 10px; }
-        .price span { font-size: 14px; color: #888; font-weight: 400; }
-        
-        .doc-list { text-align: left; list-style: none; padding: 0; color: #ccc; font-size: 14px; }
-        .doc-list li { padding: 8px 0; border-bottom: 1px solid #222; display: flex; align-items: center; }
-        .doc-list li::before { content: '✓'; color: var(--neon-blue); margin-right: 10px; font-weight: bold; }
-
-        /* --- CONSENTS & SUBMIT --- */
-        .consent-box {
-            font-size: 12px;
-            color: #888;
-            line-height: 1.6;
-            background: rgba(0,0,0,0.3);
-            padding: 20px;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-        
-        .checkbox-wrapper {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            margin-top: 15px;
-            color: #ccc;
-            font-size: 14px;
-            cursor: pointer;
-        }
-        .checkbox-wrapper input { margin-top: 4px; transform: scale(1.2); cursor: pointer; }
-
-        .submit-btn {
-            background: var(--neon-blue);
-            color: #000;
-            width: 100%;
-            padding: 20px;
-            font-size: 18px;
-            font-weight: 900;
-            text-transform: uppercase;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            margin-top: 40px;
-            transition: 0.3s;
-            box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
-        }
-        .submit-btn:hover {
-            transform: scale(1.02);
-            box-shadow: 0 0 40px rgba(0, 243, 255, 0.6);
-            background: #fff;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px;
-            background: #000;
-            color: #555;
-            border-top: 1px solid #111;
-            font-size: 14px;
-        }
-
-        @media (max-width: 768px) {
-            nav { padding: 10px 20px; height: 90px; }
-            .logo img { height: 60px; }
-            .nav-links { display: none; }
-            .form-grid { grid-template-columns: 1fr; }
-            .info-grid { grid-template-columns: 1fr; }
-            .page-header h1 { font-size: 32px; }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+
+<body class="page-form">
 
     <nav>
         <div class="logo">
@@ -267,7 +18,7 @@
                 <img src="bittsbetter.png" alt="BittsBetter Logo">
             </a>
         </div>
-        
+
         <div class="nav-links">
             <a href="tytul.html">Start</a>
             <a href="o-nas.html">O Szkole</a>
@@ -282,9 +33,9 @@
     </header>
 
     <div class="container">
-        
+
         <form action="#" method="POST">
-            
+
             <div class="form-section">
                 <h2>Preferencje Edukacyjne</h2>
                 <div class="form-grid">
@@ -303,14 +54,15 @@
                             <option value="hiszpanski">Język Hiszpański</option>
                             <option value="niemiecki">Język Niemiecki</option>
                         </select>
-                        <p style="color: #666; font-size: 11px; margin-top: 5px;">*O uruchomieniu grupy językowej decyduje większość.</p>
+                        <p style="color: #666; font-size: 11px; margin-top: 5px;">*O uruchomieniu grupy językowej
+                            decyduje większość.</p>
                     </div>
                 </div>
             </div>
 
             <div class="form-section">
                 <h2>Dane Kandydata</h2>
-                
+
                 <div class="form-grid">
                     <div class="form-group">
                         <label>Imię i Nazwisko <span class="required">*</span></label>
@@ -388,9 +140,11 @@
 
             <div class="form-section">
                 <h2>Dane Rodziców / Opiekunów</h2>
-                
+
                 <div class="form-grid">
-                    <div class="full-width"><h3>Matka / Opiekunka Prawna</h3></div>
+                    <div class="full-width">
+                        <h3>Matka / Opiekunka Prawna</h3>
+                    </div>
                     <div class="form-group full-width">
                         <label>Imię i Nazwisko <span class="required">*</span></label>
                         <input type="text" name="matka_imie" required>
@@ -404,7 +158,9 @@
                         <input type="email" name="matka_email">
                     </div>
 
-                    <div class="full-width" style="border-top: 1px solid #222; margin-top: 20px; padding-top: 20px;"><h3>Ojciec / Opiekun Prawny</h3></div>
+                    <div class="full-width" style="border-top: 1px solid #222; margin-top: 20px; padding-top: 20px;">
+                        <h3>Ojciec / Opiekun Prawny</h3>
+                    </div>
                     <div class="form-group full-width">
                         <label>Imię i Nazwisko <span class="required">*</span></label>
                         <input type="text" name="ojciec_imie" required>
@@ -424,7 +180,8 @@
                 <div class="info-card accent-pink">
                     <h4>Czesne i Opłaty</h4>
                     <div class="price">1 800 zł<span> / miesięcznie</span></div>
-                    <p style="color: #aaa; font-size: 13px;">Płatne przez 12 miesięcy w roku.<br>Wpisowe: zgodnie z regulaminem rekrutacji.</p>
+                    <p style="color: #aaa; font-size: 13px;">Płatne przez 12 miesięcy w roku.<br>Wpisowe: zgodnie z
+                        regulaminem rekrutacji.</p>
                 </div>
                 <div class="info-card accent-blue">
                     <h4>Wymagane Dokumenty</h4>
@@ -441,11 +198,15 @@
             <div class="form-section" style="margin-top: 40px;">
                 <h2>Zgody Formalne</h2>
                 <div class="consent-box">
-                    <p><strong>Obowiązek informacyjny RODO:</strong> Administratorem danych osobowych jest Technikum New Technology w Krakowie (ul. Tyniecka 18). Dane przetwarzane są wyłącznie w celu przeprowadzenia procesu rekrutacji na podstawie art. 6 ust. 1 lit. c RODO oraz ustawy Prawo Oświatowe. Podanie danych jest wymogiem ustawowym.</p>
+                    <p><strong>Obowiązek informacyjny RODO:</strong> Administratorem danych osobowych jest Technikum New
+                        Technology w Krakowie (ul. Tyniecka 18). Dane przetwarzane są wyłącznie w celu przeprowadzenia
+                        procesu rekrutacji na podstawie art. 6 ust. 1 lit. c RODO oraz ustawy Prawo Oświatowe. Podanie
+                        danych jest wymogiem ustawowym.</p>
                 </div>
                 <label class="checkbox-wrapper">
                     <input type="checkbox" required>
-                    <span>Wyrażam zgodę na przetwarzanie moich danych osobowych przez Technikum New Technology w Krakowie dla potrzeb rekrutacji. Zapoznałem/am się z klauzulą informacyjną.</span>
+                    <span>Wyrażam zgodę na przetwarzanie moich danych osobowych przez Technikum New Technology w
+                        Krakowie dla potrzeb rekrutacji. Zapoznałem/am się z klauzulą informacyjną.</span>
                 </label>
             </div>
 
@@ -463,8 +224,8 @@
         function toggleAddress() {
             const checkBox = document.getElementById("sameAddress");
             const addressContainer = document.getElementById("adresZamieszkaniaContainer");
-            
-            if (checkBox.checked == true){
+
+            if (checkBox.checked == true) {
                 addressContainer.style.display = "none";
                 // Opcjonalnie: Tutaj można dodać logikę czyszczenia lub kopiowania wartości
             } else {
@@ -474,4 +235,5 @@
     </script>
 
 </body>
+
 </html>
