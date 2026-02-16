@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Szkole - New Technology High School</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    
+    <style>
+        :root {
+            --neon-blue: #00f3ff;
+            --dark-bg: #050505;
+            --panel-bg: #111;
+            --text-main: #fff;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            background: var(--dark-bg);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            background: rgba(5, 5, 5, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #222;
+            height: 110px;
+        }
+
+        .logo a { display: flex; align-items: center; height: 100%; }
+        .logo img { height: 90px; width: auto; transition: 0.3s; }
+        .logo img:hover { transform: scale(1.05); filter: drop-shadow(0 0 10px rgba(0, 243, 255, 0.6)); }
+
+        .nav-links a {
+            color: #ccc;
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 700;
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--neon-blue);
+            text-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        .cta-btn {
+            background: transparent;
+            border: 2px solid var(--neon-blue);
+            color: var(--neon-blue);
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-left: 30px;
+            transition: 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .cta-btn:hover { background: var(--neon-blue); color: #000; box-shadow: 0 0 20px var(--neon-blue); }
+
+        .page-header {
+            padding: 180px 50px 80px;
+            text-align: center;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #050505 70%);
+        }
+
+        .page-header h1 {
+            font-size: 50px;
+            text-transform: uppercase;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+
+        .page-header h1 span {
+            color: var(--neon-blue);
+            text-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
+        }
+
+        .page-header p {
+            font-size: 18px;
+            color: #888;
+            max-width: 700px;
+            margin: 20px auto 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        .info-section {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            margin-bottom: 120px;
+            border-bottom: 1px solid #222;
+            padding-bottom: 60px;
+        }
+        
+        .info-section:last-child { border-bottom: none; }
+
+        .info-text { width: 50%; }
+        .info-text h2 { font-size: 32px; color: var(--neon-blue); margin-bottom: 20px; text-transform: uppercase; }
+        .info-text p { font-size: 16px; line-height: 1.8; color: #ccc; margin-bottom: 20px; text-align: justify; }
+
+        .info-stats {
+            width: 50%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .stat-box {
+            background: var(--panel-bg);
+            padding: 30px;
+            border: 1px solid #333;
+            text-align: center;
+        }
+        .stat-box h3 { font-size: 36px; color: #fff; margin: 0; font-weight: 900; }
+        .stat-box p { color: #888; font-size: 14px; margin-top: 5px; text-transform: uppercase; letter-spacing: 1px; }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+            text-align: center;
+            align-items: center;
+        }
+        
+        .partner-name {
+            color: #666;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 20px;
+            border: 1px solid #222;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #000;
+            color: #555;
+            border-top: 1px solid #111;
+            font-size: 14px;
+        }
+
+        @media (max-width: 900px) {
+            .info-section { flex-direction: column; }
+            .info-text, .info-stats { width: 100%; }
+            nav { padding: 10px 20px; height: 90px; }
+            .logo img { height: 60px; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <a href="tytul.html">
+                <img src="bittsbetter.png" alt="BittsBetter Logo">
+            </a>
+        </div>
+        
+        <div class="nav-links">
+            <a href="tytul.html">Start</a>
+            <a href="o-nas.html" class="active">O Szkole</a>
+            <a href="kierunki.html">Oferta Edukacyjna</a>
+            <a href="form.html" class="cta-btn">REKRUTACJA</a>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1>New Technology <br><span>High School</span></h1>
+        <p>Niepubliczne Technikum Programistyczno-Robotyczne w Krakowie.</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- SEKCJA 1: WYNIKI -->
+        <div class="info-section">
+            <div class="info-text">
+                <h2>Efektywność Kształcenia</h2>
+                <p>Jako placówka niepubliczna stawiamy na mierzalne efekty edukacji. Nasz program nauczania jest ściśle skorelowany z wymaganiami rynku pracy oraz standardami akademickimi uczelni technicznych.</p>
+                <p>Uczniowie realizują rozszerzony program z matematyki i informatyki, co przekłada się na wysokie wyniki egzaminów zewnętrznych oraz sukcesy w olimpiadach technicznych.</p>
+            </div>
+            <div class="info-stats">
+                <div class="stat-box">
+                    <h3>100%</h3>
+                    <p>Zdawalność Egzaminów Zawodowych</p>
+                </div>
+                <div class="stat-box">
+                    <h3>3</h3>
+                    <p>Finały Międzynarodowe (USA, Turcja)</p>
+                </div>
+                <div class="stat-box">
+                    <h3>INF.03</h3>
+                    <p>Kwalifikacja Programistyczna</p>
+                </div>
+                <div class="stat-box">
+                    <h3>ELM.06</h3>
+                    <p>Kwalifikacja Robotyczna</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEKCJA 2: WSPÓŁPRACA -->
+        <div class="info-section" style="flex-direction: row-reverse;">
+            <div class="info-text">
+                <h2>Partnerzy Merytoryczni</h2>
+                <p>Model kształcenia w New Technology opiera się na ścisłej współpracy z sektorem akademickim i przemysłowym. Uczniowie mają dostęp do laboratoriów oraz wiedzy ekspertów, co wykracza poza standardową podstawę programową technikum.</p>
+                <p>Współpraca umożliwia realizację zaawansowanych projektów inżynieryjnych, takich jak budowa łazików marsjańskich czy autonomicznych systemów robotycznych.</p>
+            </div>
+            <div class="info-stats" style="display: block;">
+                <div class="partner-name" style="margin-bottom: 20px;">Politechnika Krakowska</div>
+                <div class="partner-name" style="margin-bottom: 20px;">AGH (Koła Naukowe)</div>
+                <div class="partner-name">FIRST Robotics Competition</div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2025 New Technology Kraków. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+</body>
+</html>

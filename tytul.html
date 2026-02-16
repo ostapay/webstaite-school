@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Tech Kraków - Start</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+
+    <style>
+        :root {
+            --neon-blue: #00f3ff;
+            --dark-bg: #050505;
+            --text-main: #fff;
+            --glass-bg: rgba(20, 20, 20, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            background: var(--dark-bg);
+            background-image: radial-gradient(circle at 15% 50%, rgba(0, 243, 255, 0.08) 0%, transparent 25%),
+                              radial-gradient(circle at 85% 30%, rgba(0, 243, 255, 0.05) 0%, transparent 25%);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        /* --- NAV --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 50px; 
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            background: rgba(5, 5, 5, 0.7);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--glass-border);
+            height: 110px;
+        }
+
+        .logo a { display: flex; align-items: center; height: 100%; }
+        .logo img { height: 90px; width: auto; transition: 0.3s; }
+        .logo img:hover { transform: scale(1.05); filter: drop-shadow(0 0 15px rgba(0, 243, 255, 0.6)); }
+
+        .nav-links a {
+            color: #ccc;
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 700;
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--neon-blue);
+            text-shadow: 0 0 15px var(--neon-blue);
+        }
+
+        .cta-btn {
+            background: rgba(0, 243, 255, 0.1);
+            border: 1px solid var(--neon-blue);
+            color: var(--neon-blue);
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-left: 30px;
+            transition: 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            backdrop-filter: blur(5px);
+        }
+
+        .cta-btn:hover { background: var(--neon-blue); color: #000; box-shadow: 0 0 30px var(--neon-blue); }
+
+        /* --- HERO --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.6), #050505), url('https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            padding-top: 110px;
+        }
+
+        .hero h1 {
+            font-size: 80px;
+            margin: 0;
+            line-height: 1.1;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #fff, #aaa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero h1 span {
+            display: block;
+            color: var(--neon-blue);
+            -webkit-text-fill-color: var(--neon-blue);
+            text-shadow: 0 0 40px rgba(0, 243, 255, 0.6);
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 20px 0 40px;
+            color: #ddd;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--glass-border);
+        }
+
+        .hero-buttons { display: flex; gap: 20px; }
+
+        .main-btn {
+            background: var(--neon-blue);
+            color: #000;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 900;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
+        }
+        .main-btn:hover { transform: scale(1.05); box-shadow: 0 0 40px var(--neon-blue); }
+
+        .secondary-btn {
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid var(--neon-blue);
+            color: var(--neon-blue);
+            padding: 15px 40px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+            backdrop-filter: blur(5px);
+        }
+        .secondary-btn:hover { background: var(--neon-blue); color: #000; box-shadow: 0 0 20px var(--neon-blue); }
+
+        /* --- FEATURES --- */
+        .features {
+            padding: 80px 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--glass-bg);
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid var(--glass-border);
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .feature-card:hover {
+            border-color: var(--neon-blue);
+            transform: translateY(-10px);
+            background: rgba(0, 243, 255, 0.05);
+            box-shadow: 0 0 30px rgba(0, 243, 255, 0.15);
+        }
+
+        .feature-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--neon-blue);
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+        }
+
+        .feature-card p { color: #aaa; line-height: 1.6; }
+        
+        .feature-card a {
+            color: var(--neon-blue);
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 1px solid var(--neon-blue);
+        }
+
+        /* --- ROBOTYKA --- */
+        .robotics-section {
+            padding: 100px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(20, 20, 20, 0.4);
+            border-top: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+        }
+
+        .robo-text { width: 45%; }
+        .robo-text h2 { font-size: 40px; margin-bottom: 20px; text-shadow: 0 0 20px rgba(0, 243, 255, 0.2); }
+        .robo-text h2 span { color: var(--neon-blue); }
+
+        .robo-img {
+            width: 50%;
+            height: 400px;
+            background: url('https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?q=80&w=1000&auto=format&fit=crop');
+            background-size: cover;
+            border-radius: 20px;
+            box-shadow: 0 0 50px rgba(0, 243, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: rgba(5, 5, 5, 0.9);
+            backdrop-filter: blur(10px);
+            color: #555;
+            font-size: 14px;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 10px 20px; height: 90px; }
+            .logo img { height: 60px; }
+            .hero h1 { font-size: 40px; }
+            .nav-links { display: none; }
+            .robotics-section { flex-direction: column; }
+            .robo-text, .robo-img { width: 100%; margin-bottom: 30px; }
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="tytul.html">
+                <img src="bittsbetter.png" alt="BittsBetter Logo">
+            </a>
+        </div>
+        
+        <div class="nav-links">
+            <a href="tytul.html" class="active">Start</a>
+            <a href="o-nas.html">O Szkole</a>
+            <a href="kierunki.html">Oferta Edukacyjna</a>
+            <a href="form.html" class="cta-btn">REKRUTACJA</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Technologia.<br><span>Praktyka.</span></h1>
+        <p>W technikum stawiamy na połączenie solidnej wiedzy teoretycznej z praktyką, dzięki czemu uczniowie zdobywają realne umiejętności przydatne w przyszłości.</p>
+        
+        <div class="hero-buttons">
+            <a href="kierunki.html" class="main-btn">SPRAWDŹ KIERUNKI</a>
+            <a href="form.html" class="secondary-btn">DOŁĄCZ TERAZ</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <h3>01. Robot FRC</h3>
+            <p>Jesteśmy domem dla drużyny 9155. Budujemy roboty klasy światowej i rywalizujemy w <a href="https://www.firstinspires.org/robotics/frc" target="_blank">USA i Turcji</a>.</p>
+        </div>
+        <div class="feature-card">
+            <h3>02. Podejście Projektowe</h3>
+            <p>Stawiamy na pracę zespołową i rozwiązywanie problemów inżynieryjnych. Uczysz się poprzez działanie, nie tylko z podręczników.</p>
+        </div>
+        <div class="feature-card">
+            <h3>03. Game Dev & Code</h3>
+            <p>Od Pythona po C++. Tworzymy gry i aplikacje, które działają, a nie tylko wyglądają w zeszycie.</p>
+        </div>
+    </section>
+
+    <section class="robotics-section">
+        <div class="robo-text">
+            <h2>BUDUJEMY <br><span>PRZYSZŁOŚĆ</span></h2>
+            <p>W New Tech teoria to tylko wstęp. Większość czasu spędzasz w warsztacie i labie komputerowym. Nasze roboty to nie zabawki z LEGO, to zaawansowane konstrukcje mechaniczne.</p>
+            <br>
+            <a href="form.html" class="cta-btn" style="margin-left:0">DOŁĄCZ DO TEAMU</a>
+        </div>
+        <div class="robo-img"></div>
+    </section>
+
+    <footer>
+        <p>© 2025 New Technology Kraków. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+</body>
+</html>
