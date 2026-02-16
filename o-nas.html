@@ -28,66 +28,84 @@
         </div>
     </nav>
 
-    <header class="page-header">
-        <h1>New Technology <br><span>High School</span></h1>
-        <p>Niepubliczne Technikum Programistyczno-Robotyczne w Krakowie.</p>
+    <header class="page-header" style="padding-bottom: 40px;">
+        <h1>POZNAJ <span>NAS</span></h1>
+        <p>Zobacz jak wygląda życie w New Tech Kraków. Technologia, pasja, społeczność.</p>
     </header>
 
     <div class="container">
 
-        <!-- SEKCJA 1: WYNIKI -->
+        <!-- Social Media Section -->
+        <div class="socials-section">
+            <h2>Dołącz do nas</h2>
+            <div class="social-icons">
+                <a href="#" class="social-icon facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="social-icon instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="social-icon tiktok"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#" class="social-icon youtube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="section-header">
+            <h2>Dane i Statystyki</h2>
+        </div>
         <div class="info-section">
             <div class="info-text">
-                <h2>Dane i Statystyki</h2>
-                <p>Jakość kształcenia potwierdzona wynikami egzaminów państwowych. Realizacja podstawy programowej w
-                    wymiarze rozszerzonym (Matematyka, Informatyka).</p>
+                <h2>Jakość Kształcenia</h2>
+                <p>Potwierdzona wynikami egzaminów państwowych oraz sukcesami na arenie międzynarodowej (FRC).</p>
                 <ul style="list-style: none; padding: 0; color: #ccc; margin-top: 20px;">
                     <li style="margin-bottom: 10px;"><strong>Egzaminy Zawodowe:</strong> [XXX]% zdawalności
-                        <!-- UZUPEŁNIĆ: procent zdawalności --> (INF.03,
-                        ELM.06) w latach 2023-2024.
-                    </li>
-                    <li><strong>Matura Rozszerzona:</strong> Średni wynik z matematyki +[XX]%
-                        <!-- UZUPEŁNIĆ: różnica procentowa --> względem średniej krajowej.
-                    </li>
+                        <!-- UZUPEŁNIĆ: procent --></li>
+                    <li><strong>Matura:</strong> Wyniki powyżej średniej krajowej.</li>
                 </ul>
             </div>
             <div class="info-stats">
                 <div class="stat-box">
-                    <h3>[XXX]% <!-- UZUPEŁNIĆ: procent --></h3>
-                    <p>Zdawalność Egzaminów Zawodowych</p>
+                    <h3>[XXX]%</h3>
+                    <p>Zdawalność Egzaminów</p>
                 </div>
                 <div class="stat-box">
-                    <h3>TOP [X] <!-- UZUPEŁNIĆ: miejsce --></h3>
-                    <p>Finały FRC (USA, Turcja)</p>
-                </div>
-                <div class="stat-box">
-                    <h3>INF.03</h3>
-                    <p>Kwalifikacja Programistyczna</p>
-                </div>
-                <div class="stat-box">
-                    <h3>ELM.06</h3>
-                    <p>Kwalifikacja Robotyczna</p>
+                    <h3>TOP 3</h3>
+                    <p>Ranking Techników</p>
                 </div>
             </div>
         </div>
 
-        <!-- SEKCJA 2: WSPÓŁPRACA -->
-        <div class="info-section" style="flex-direction: row-reverse;">
-            <div class="info-text">
-                <h2>Partnerzy Technologiczni</h2>
-                <p>Współpraca z sektorem R&D oraz uczelniami technicznymi. Dostęp do infrastruktury badawczej klasy
-                    uniwersyteckiej.</p>
-                <p>Transfer wiedzy w zakresie: Robotyka Mobilna, Systemy Autonomiczne, Inżynieria Oprogramowania.</p>
-            </div>
-            <div class="info-stats" style="display: block;">
-                <div class="partner-name" style="margin-bottom: 20px;">Politechnika Krakowska (Wydział Mechaniczny)
-                </div>
-                <div class="partner-name" style="margin-bottom: 20px;">AGH (Koło Naukowe Integra)</div>
-                <div class="partner-name">FIRST Robotics Competition (USA)</div>
-            </div>
+        <!-- Gallery Section -->
+        <div class="section-header">
+            <h2>Galeria</h2>
+            <p>Pracownie, projekty, wydarzenia.</p>
+        </div>
+        <div class="gallery-grid">
+            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop"
+                class="gallery-img" alt="Warsztaty">
+            <img src="https://images.unsplash.com/photo-1504384308090-c54be3852f33?q=80&w=1887&auto=format&fit=crop"
+                class="gallery-img" alt="Biuro">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop"
+                class="gallery-img" alt="Robotyka">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop"
+                class="gallery-img" alt="Zespół">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop"
+                class="gallery-img" alt="Spotkanie">
+            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop"
+                class="gallery-img" alt="Coding">
+        </div>
+
+        <!-- Partners -->
+        <div class="section-header">
+            <h2>Partnerzy</h2>
+        </div>
+        <div class="partners-grid">
+            <div class="partner-name">Politechnika Krakowska</div>
+            <div class="partner-name">AGH</div>
+            <div class="partner-name">FIRST Robotics</div>
         </div>
 
     </div>
+
+    <!-- Lightbox Script -->
+    <script src="script.js"></script>
 
     <footer>
         <p>© 2025 New Technology Kraków. Wszelkie prawa zastrzeżone.</p>
