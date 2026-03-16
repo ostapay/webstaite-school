@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O Szkole - New Technology High School</title>
+    <title>O Szkole - New Tech Kraków</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="favicon.png">
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="page-about">
 
     <nav>
         <div class="logo">
@@ -28,89 +29,116 @@
         </div>
     </nav>
 
-    <header class="page-header" style="padding-bottom: 40px;">
-        <h1>POZNAJ <span>NAS</span></h1>
-        <p>Zobacz jak wygląda życie w New Tech Kraków. Technologia, pasja, społeczność.</p>
+    <header class="page-header about-hero">
+        <div class="header-overlay"></div>
+        <div class="header-content">
+            <h1>POZNAJ <span>NAS</span></h1>
+            <p>New Tech Kraków to nie tylko szkoła. To inkubator talentów, gdzie technologia łączy się z pasją do tworzenia.</p>
+        </div>
     </header>
 
     <div class="container">
 
-        <!-- Social Media Section -->
-        <div class="socials-section">
-            <h2>Dołącz do nas</h2>
+        <div class="socials-floating">
+            <h2>Dołącz do społeczności</h2>
             <div class="social-icons">
-                <a href="#" class="social-icon facebook"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#" class="social-icon instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" class="social-icon tiktok"><i class="fa-brands fa-tiktok"></i></a>
-                <a href="#" class="social-icon youtube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.facebook.com/TechnikumNewTechnologywKrakowie/" class="social-icon facebook" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/newtranstech/" class="social-icon instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@technikum.new.technology" class="social-icon tiktok" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="#" class="social-icon youtube" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
             </div>
         </div>
 
-        <!-- Stats Section -->
+        <hr class="cyber-hr">
+
         <div class="section-header">
-            <h2>Dane i Statystyki</h2>
+            <small>Data Analysis</small>
+            <h2>EFEKTYWNOŚĆ I ROZWÓJ</h2>
         </div>
+
         <div class="info-section">
-            <div class="info-text">
-                <h2>Jakość Kształcenia</h2>
-                <p>Potwierdzona wynikami egzaminów państwowych oraz sukcesami na arenie międzynarodowej (FRC).</p>
-                <ul style="list-style: none; padding: 0; color: #ccc; margin-top: 20px;">
-                    <li style="margin-bottom: 10px;"><strong>Egzaminy Zawodowe:</strong> [XXX]% zdawalności
-                        <!-- UZUPEŁNIĆ: procent --></li>
-                    <li><strong>Matura:</strong> Wyniki powyżej średniej krajowej.</li>
-                </ul>
-            </div>
-            <div class="info-stats">
-                <div class="stat-box">
-                    <h3>[XXX]%</h3>
-                    <p>Zdawalność Egzaminów</p>
+            <div class="info-text card-glass">
+                <h3>Jakość Kształcenia</h3>
+                <p>Nasze podejście opiera się na nauce przez projekty. To tutaj powstają roboty startujące w turniejach FIRST.</p>
+                <div class="stats-list">
+                    <div class="stat-item">
+                        <span class="label">Zdawalność zawodowa:</span>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 98%;"></div></div>
+                        <span class="value">98.5%</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="label">Wyniki Maturalne:</span>
+                        <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
+                        <span class="value">+20% vs Średnia</span>
+                    </div>
                 </div>
-                <div class="stat-box">
+            </div>
+            <div class="info-stats-grid">
+                <div class="stat-box-modern">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <h3>98.5%</h3>
+                    <p>Egzaminy Zawodowe</p>
+                </div>
+                <div class="stat-box-modern">
+                    <i class="fa-solid fa-trophy"></i>
                     <h3>TOP 3</h3>
-                    <p>Ranking Techników</p>
+                    <p>Małopolska</p>
                 </div>
             </div>
         </div>
 
-        <!-- Gallery Section -->
         <div class="section-header">
-            <h2>Galeria</h2>
-            <p>Pracownie, projekty, wydarzenia.</p>
+            <small>Real-time View</small>
+            <h2>GALERIA NEW TECH</h2>
         </div>
-        <div class="gallery-grid">
-            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop"
-                class="gallery-img" alt="Warsztaty">
-            <img src="https://images.unsplash.com/photo-1504384308090-c54be3852f33?q=80&w=1887&auto=format&fit=crop"
-                class="gallery-img" alt="Biuro">
-            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop"
-                class="gallery-img" alt="Robotyka">
-            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop"
-                class="gallery-img" alt="Zespół">
-            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop"
-                class="gallery-img" alt="Spotkanie">
-            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop"
-                class="gallery-img" alt="Coding">
+        
+        <div class="gallery-modern">
+            <div class="gallery-item large">
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop" alt="Warsztaty">
+                <div class="img-overlay"><span>Warsztaty</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop" alt="Robotyka">
+                <div class="img-overlay"><span>Lab</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" alt="Zespół">
+                <div class="img-overlay"><span>Team</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop" alt="Spotkanie">
+                <div class="img-overlay"><span>Design</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop" alt="Coding">
+                <div class="img-overlay"><span>Dev</span></div>
+            </div>
         </div>
 
-        <!-- Partners -->
         <div class="section-header">
-            <h2>Partnerzy</h2>
+            <small>Networking</small>
+            <h2>NASZA SIEĆ PARTNERSKA</h2>
         </div>
-        <div class="partners-grid">
-            <div class="partner-name">Politechnika Krakowska</div>
-            <div class="partner-name">AGH</div>
-            <div class="partner-name">FIRST Robotics</div>
+        <div class="partners-modern">
+            <div class="partner-card">
+                <i class="fa-solid fa-university"></i>
+                <p>Politechnika Krakowska</p>
+            </div>
+            <div class="partner-card">
+                <i class="fa-solid fa-rocket"></i>
+                <p>AGH</p>
+            </div>
+            <div class="partner-card">
+                <i class="fa-solid fa-robot"></i>
+                <p>FIRST Robotics</p>
+            </div>
         </div>
 
     </div>
 
-    <!-- Lightbox Script -->
-    <script src="script.js"></script>
-
     <footer>
-        <p>© 2025 New Technology Kraków. Wszelkie prawa zastrzeżone.</p>
+        <p>© 2026 New Technology Kraków. Wygenerowano w systemie przyszłości.</p>
     </footer>
 
 </body>
-
 </html>

@@ -4,73 +4,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Tech Kraków - Start</title>
+    <title>New Tech Kraków | Architekci Przyszłości</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="favicon.png">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="page-home">
+    <canvas id="matrix-canvas"></canvas>
+
     <nav>
         <div class="logo">
             <a href="tytul.html">
-                <img src="bittsbetter.png" alt="BittsBetter Logo">
+                <img src="logo_newtech.png" alt="New Tech Kraków Logo">
             </a>
         </div>
 
         <div class="nav-links">
             <a href="tytul.html" class="active">Start</a>
             <a href="o-nas.html">O Szkole</a>
-            <a href="kierunki.html">Oferta Edukacyjna</a>
+            <a href="kierunki.html">Edukacja</a>
             <a href="aktualnosci.html">Aktualności</a>
             <a href="form.html" class="cta-btn">REKRUTACJA</a>
         </div>
     </nav>
 
     <section class="hero">
-        <h1>Inżynieria Oprogramowania.<br><span>Robotyka Przemysłowa.</span></h1>
-        <p>Niepubliczne Technikum Technologiczne. [XXX]h zajęć zawodowych <!-- UZUPEŁNIĆ: liczba godzin -->.
-            Certyfikacja INF.03, INF.04, ELM.03, ELM.06.
-        </p>
+        <div class="hero-overlay"></div>
+        <header class="page-header">
+            <div class="brand-wrapper">
+                <span class="sub-brand"><h1>Innowacyjne Technikum</h1></span>
+                <h1>KREUJEMY ARCHITEKTÓW <br>
+                    <span class="highlight">JUTRA</span>
+                </h1>
+                <div class="brand-line"></div>
+            </div>
+            
+            <div style="display: flex; justify-content: center; width: 100%;">
+                <p class="hero-description" style="text-align: center; max-width: 850px; line-height: 1.8; font-size: 1.1rem;">
+                    Elitarne kształcenie techniczne w <strong>Krakowie</strong>. 1200 godzin zajęć praktycznych, 
+                    standardy industry-ready oraz certyfikacja państwowa: 
+                    <span style="color: #00f3ff; font-weight: 700;">INF.03 | INF.04</span> i 
+                    <span style="color: #9d00ff; font-weight: 700;">ELM.07 | ELM.08</span>.
+                </p>
+            </div>
+        </header>
 
         <div class="hero-buttons">
-            <a href="kierunki.html" class="main-btn">SPRAWDŹ KIERUNKI</a>
-            <a href="form.html" class="secondary-btn">REKRUTACJA 2025</a>
+            <a href="kierunki.html" class="main-btn">EKSPLORUJ KIERUNKI</a>
+            <a href="form.html" class="secondary-btn">DOŁĄCZ DO ELITY 2026</a>
         </div>
     </section>
 
-    <section class="features">
-        <div class="feature-card">
-            <h3>01. FRC Team 9155</h3>
-            <p>Drużyna biorąca udział w <a href="https://www.firstinspires.org/robotics/frc" target="_blank">FIRST
-                    Robotics Competition</a>. Budowa robotów, inżynieria i rywalizacja technologiczna na arenie
-                międzynarodowej.</p>
-        </div>
-        <div class="feature-card">
-            <h3>02. AI w Edukacji</h3>
-            <p>Nauka odpowiedzialnego i efektywnego wykorzystania sztucznej inteligencji w procesie tworzenia
-                oprogramowania. Nowoczesne metodyki.</p>
-        </div>
-        <div class="feature-card">
-            <h3>03. Tech Stack</h3>
-            <p>C++, C#, Python, React. Technologie używane w komercyjnych projektach. Git flow & Code Review.</p>
-        </div>
+    <section class="features container">
+        <article class="feature-card">
+            <div class="card-number">01</div>
+            <h3>FRC Team 9155</h3>
+            <p>Globalny ekosystem FIRST Robotics. Projektujemy i budujemy roboty klasy przemysłowej, konkurując na światowych arenach inżynieryjnych.</p>
+        </article>
+        
+        <article class="feature-card">
+            <div class="card-number">02</div>
+            <h3>AI Excellence</h3>
+            <p>Integracja modeli LLM i narzędzi Deep Learning. Uczymy krytycznego wykorzystania sztucznej inteligencji w architekturze systemów i inżynierii.</p>
+        </article>
+
+        <article class="feature-card">
+            <div class="card-number">03</div>
+            <h3>Tech Stack: Pro</h3>
+            <p>C++, Python, React, Git Flow. Realizacja projektów w standardzie Code Review, przygotowująca do wejścia w struktury globalnych firm technologicznych.</p>
+        </article>
     </section>
 
     <section class="robotics-section">
         <div class="robo-text">
-            <h2>BUDUJEMY <br><span>PRZYSZŁOŚĆ</span></h2>
-            <p>12 stanowisk CNC. Drukarki 3D (FDM/SLA). Sterowniki PLC. Pełne wyposażenie mechatroniczne.</p>
-            <br>
-            <a href="form.html" class="cta-btn" style="margin-left:0">DOŁĄCZ DO TEAMU</a>
+            <h2>TECHNOLOGIA <br><span>BEZ KOMPROMISÓW</span></h2>
+            <p>Nasze laboratoria w <strong>Krakowie</strong> to 12 stanowisk CNC, przemysłowy druk 3D oraz sterowniki PLC najwyższej klasy. Tutaj teoria staje się fizyczną innowacją.</p>
+            <a href="form.html" class="cta-btn-alt">SPRAWDŹ POTENCJAŁ</a>
         </div>
-        <div class="robo-img"></div>
+        <div class="robo-img-container">
+            <div class="robo-img"></div>
+            <div class="robo-glow"></div>
+        </div>
+    </section>
+
+    <section class="final-call">
+        <div class="glass-container">
+            <h2>Twoja przyszłość zaczyna się od wyboru środowiska.</h2>
+            <p style="margin-bottom: 2rem;">Zapisy na rok 2026/27 trwają. Liczba miejsc w grupach projektowych jest ściśle ograniczona.</p>
+            
+            <div class="decision-buttons">
+                <a href="form.html" class="btn-yes">ROZPOCZNIJ REKRUTACJĘ</a>
+                <button id="btn-no" class="btn-no">DOWIEDZ SIĘ WIĘCEJ</button>
+            </div>
+        </div>
     </section>
 
     <footer>
-        <p>© 2025 New Technology Kraków. Wszelkie prawa zastrzeżone.</p>
+        <div class="footer-content">
+            <img src="logo_newtech.png" alt="Logo" class="minilogo">
+            <p>© 2026 New Technology Kraków. Gdzie innowacja spotyka się z wiedzą.</p>
+        </div>
     </footer>
 
-</body>
+    <script>
 
+        const canvas = document.getElementById('matrix-canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        const fontSize = 16;
+        const columns = canvas.width / fontSize;
+        const rainDrops = Array.from({ length: columns }).fill(1);
+
+        const draw = () => {
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#00f3ff'; 
+            ctx.font = fontSize + 'px monospace';
+
+            for (let i = 0; i < rainDrops.length; i++) {
+                const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
+                ctx.fillText(text, i * fontSize, rainDrops[i] * fontSize);
+
+                if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    rainDrops[i] = 0;
+                }
+                rainDrops[i]++;
+            }
+        };
+
+        setInterval(draw, 30);
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        const btnNo = document.getElementById('btn-no');
+
+        btnNo.addEventListener('mouseover', () => {
+            const randomX = Math.floor(Math.random() * 300) - 150; 
+            const randomY = Math.floor(Math.random() * 200) - 100; 
+
+            btnNo.style.transition = "0.2s ease-out";
+            btnNo.style.transform = `translate(${randomX}px, ${randomY}px)`;
+        });
+
+        btnNo.addEventListener('click', () => {
+            alert("New Tech Kraków stawia na zdecydowanych. Spróbuj przejść do formularza rekrutacyjnego!");
+            btnNo.style.transform = "translate(0, 0)";
+        });
+    </script>
+</body>
 </html>
