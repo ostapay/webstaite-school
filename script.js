@@ -20,3 +20,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+const btnNo = document.getElementById('btn-no');
+
+btnNo.addEventListener('mouseover', () => {
+    // Losujemy przesunięcie w zakresie -100px do 100px
+    const x = Math.random() * 200 - 100; 
+    const y = Math.random() * 200 - 100;
+
+    btnNo.style.transform = `translate(${x}px, ${y}px)`;
+});
+
+// Opcjonalnie: reset pozycji po kliknięciu (jeśli komuś się uda)
+btnNo.addEventListener('click', () => {
+    alert('Błąd systemu! W New Tech Kraków wybieramy tylko sukces. Spróbuj kliknąć TAK! ;)');
+});
