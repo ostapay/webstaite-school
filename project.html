@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Tech Academy | Kraków - Hall of Fame</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .achievement-card {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            background: rgba(10, 10, 10, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            border-color: #00ff00;
+            box-shadow: 0 0 25px rgba(0, 255, 0, 0.25);
+            transform: translateY(-8px);
+        }
+
+        .achievement-img-container {
+            width: 100%;
+            padding-top: 70%; /* Збалансоване співвідношення для фото */
+            position: relative;
+            overflow: hidden;
+            border-bottom: 2px solid #222;
+        }
+
+        .achievement-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .achievement-info {
+            padding: 1.5rem 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            min-height: 140px;
+            justify-content: center;
+        }
+
+        .achievement-title {
+            font-size: 0.9rem;
+            color: #fff;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .achievement-award {
+            font-size: 1rem;
+            font-weight: 900;
+            color: #00ff00; /* Твій зелений колір з фото */
+            text-transform: uppercase;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        @media (max-width: 1100px) { .achievements-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 700px) { .achievements-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+
+<body class="page-home">
+
+    <nav>
+        <div class="logo">
+            <a href="index.html"><img src="logo_newtech.png" alt="New Tech Logo"></a>
+        </div>
+        <div class="nav-links">
+            <a href="tytul.html" class="active">Start</a>
+            <a href="o-nas.html">O Szkole</a>
+            <a href="kierunki.html">Edukacja</a>
+            <a href="project.html">Aktualności</a>
+            <a href="aktualnosci.html">Osiągnięcie</a>
+            <a href="form.html" class="cta-btn">REKRUTACJA</a>
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <section id="osiagniecia" class="section-header">
+            <h2>Nasze <span>Osiągnięcia</span></h2>
+        </section>
+
+        <div class="achievements-grid">
+            
+            <article class="achievement-card">
+                <div class="achievement-img-container"><div class="achievement-img" style="background-image: url('1_25.jpg');"></div></div>
+                <div class="achievement-info">
+                    <p class="achievement-title">World Robot Olympiad 2025 SINGAPUR</p>
+                    <p class="achievement-award">Reprezentowanie Polski w Singapurze</p>
+                </div>
+            </article>
+
+            <article class="achievement-card">
+                <div class="achievement-img-container"><div class="achievement-img" style="background-image: url('2_25.jpg');"></div></div>
+                <div class="achievement-info">
+                    <p class="achievement-title">World Robot Olympiad 2025 Lublin</p>
+                    <p class="achievement-award">1 miejsce</p>
+                </div>
+            </article>
+
+            <article class="achievement-card">
+                <div class="achievement-img-container"><div class="achievement-img" style="background-image: url('3_25.jpg');"></div></div>
+                <div class="achievement-info">
+                    <p class="achievement-title">World Robot Olympiad 2025 Lublin</p>
+                    <p class="achievement-award">3 miejsce</p>
+                </div>
+            </article>
+
+            <article class="achievement-card">
+                <div class="achievement-img-container"><div class="achievement-img" style="background-image: url('1_24.jpeg');"></div></div>
+                <div class="achievement-info">
+                    <p class="achievement-title">World Robot Olympiad 2024 Italy</p>
+                    <p class="achievement-award">1 miejsce</p>
+                </div>
+            </article>
+
+            <article class="achievement-card">
+                <div class="achievement-img-container"><div class="achievement-img" style="background-image: url('2_24.jpeg');"></div></div>
+                <div class="achievement-info">
+                    <p class="achievement-title">First Robotics Competition 2025 Instanbul</p>
+                    <p class="achievement-award">3 miejsce</p>
+                </div>
+            </article>
+
+            <article class="achievement-card">
+                <div class="achievement-img-container"><div class="achievement-img" style="background-image: url('3_24.jpeg');"></div></div>
+                <div class="achievement-info">
+                    <p class="achievement-title">First Robotics Competition 2024 Instanbul</p>
+                    <p class="achievement-award">Nagroda IMAGERY AWARD</p>
+                </div>
+            </article>
+
+            <article class="achievement-card">
+                <div class="achievement-img-container"><div class="achievement-img" style="background-image: url('1_23.jpg');"></div></div>
+                <div class="achievement-info">
+                    <p class="achievement-title">Greater Pittsburgh Regional 2023 USA</p>
+                    <p class="achievement-award">First Robotics Competition</p>
+                </div>
+            </article>
+
+            <article class="achievement-card">
+                <div class="achievement-img-container"><div class="achievement-img" style="background-image: url('2_23.jpg');"></div></div>
+                <div class="achievement-info">
+                    <p class="achievement-title">FRC Izmir Regional 2022 Turcja</p>
+                    <p class="achievement-award">Nagroda CREATIVITY AWARD + 3 miejsce</p>
+                </div>
+            </article>
+
+            <article class="achievement-card">
+                <div class="achievement-img-container"><div class="achievement-img" style="background-image: url('3_23.jpg');"></div></div>
+                <div class="achievement-info">
+                    <p class="achievement-title">Bosphorus Regional 2019</p>
+                    <p class="achievement-award">First Robotics Competition</p>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="cyber-hr"></div>
+
+    </main>
+
+    <footer>
+        <div class="social-icons">
+            <a href="#" class="social-icon youtube"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon tiktok"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <p>&copy; 2026 New Tech Kraków</p>
+    </footer>
+
+</body>
+</html>
